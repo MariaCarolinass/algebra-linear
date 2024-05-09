@@ -1,9 +1,5 @@
+# coding=utf-8
 import time
-
-espacoVetorial = "Real"
-dimensao = 2
-soma = "x1 + x2, y1, + y2"
-multipliEscalar = "a * x, a * y"
 
 def checarAdicaoComutativa():
     # u + v = v + u
@@ -114,7 +110,8 @@ def checarIdentidadeMultiplicativa():
     print("A identidade multiplicativa NÃO foi satisfeita")
     return False
 
-def testarEspacoVetorial():
+
+def testarEspacoVetorial(dim, soma, multipliEscalar):
     axm1 = checarAdicaoComutativa()
     axm2 = checarAdicaoAssociativa()
     axm3 = checarExistenciaVetorNulo()
@@ -123,10 +120,20 @@ def testarEspacoVetorial():
     axm6 = checarDistribuicaoEscalares()
     axm7 = checarAssociativadeEscalar()
     axm8 = checarIdentidadeMultiplicativa()
-    print("----------------")
+    print("-"*50)
     if (axm1 == axm2 == axm3 == axm4 == axm5 == axm6 == axm7 == axm8 == True):
         print("É um espaço vetorial, pois cumpri todos os 8 axiomas")
     else:
         print("Não é um espaço vetorial, pois não cumpri todos os 8 axiomas")
     
-testarEspacoVetorial()
+print("="*50)
+print("Verificador de espaço vetorial de números reais (R)")
+print("="*50)
+
+dim = int(input("Qual a dimensão do espaço: "))
+
+print("Como será a soma e a multiplicação do espaço?")
+soma = str(input("Insira a soma: "))
+multipliEscalar = str(input("Insira a multiplicação: "))
+
+testarEspacoVetorial(dim, soma, multipliEscalar)
